@@ -85,6 +85,7 @@ var testData = {
 				"\uC774\uD574\uD55C\uB2E4\uBA74\uC5BC\uB9C8\uB098\uC88B\uC744\uAE4C",
 			encoded: "989aomsvi5e83db1d2a355cv1e0vak1dwrv93d5xbh15a0dt30a5jpsd879ccm6fea98c"
 		},
+
 		/**
 		 * As there's no way to do it in JavaScript, Punycode.js doesn't support
 		 * mixed-case annotation (which is entirely optional as per the RFC).
@@ -128,6 +129,7 @@ var testData = {
 		},
 		{ decoded: "\u30D1\u30D5\u30A3\u30FCde\u30EB\u30F3\u30D0", encoded: "de-jg4avhby1noc0d" },
 		{ decoded: "\u305D\u306E\u30B9\u30D4\u30FC\u30C9\u3067", encoded: "d9juau41awczczp" },
+
 		/**
 		 * This example is an ASCII string that breaks the existing rules for host
 		 * name labels. (It's not a realistic example for IDNA, because IDNA never
@@ -226,7 +228,7 @@ var testData = {
 	]
 };
 
-/*--------------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
 
 // simple `Array#forEach`-like helper function
 function each(array, fn) {
@@ -238,7 +240,7 @@ function each(array, fn) {
 
 var raises = QUnit.assert.throws;
 
-/*--------------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
 
 // Explicitly call `QUnit.module()` instead of `module()` in case we are in
 // a CLI environment.
@@ -296,6 +298,7 @@ test("punycode.toUnicode", function () {
 	each(testData.domains, function (object) {
 		equal(punycode.toUnicode(object.encoded), object.decoded, object.description);
 	});
+
 	/**
 	 * Domain names (or other strings) that don't start with `xn--` may not be
 	 * converted.
@@ -313,6 +316,7 @@ test("punycode.toASCII", function () {
 	each(testData.domains, function (object) {
 		equal(punycode.toASCII(object.decoded), object.encoded, object.description);
 	});
+
 	/**
 	 * Domain names (or other strings) that are already in ASCII may not be
 	 * converted.
@@ -323,6 +327,7 @@ test("punycode.toASCII", function () {
 			"Domain names (or other strings) that are already in ASCII may not be converted"
 		);
 	});
+
 	/**
 	 * IDNA2003 separators must be supported for backwards compatibility.
 	 */
@@ -332,7 +337,7 @@ test("punycode.toASCII", function () {
 	});
 });
 
-/*--------------------------------------------------------------------------*/
+/* --------------------------------------------------------------------------*/
 
 QUnit.config.noglobals = true;
 QUnit.config.hidepassed = true;
