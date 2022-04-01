@@ -1,3 +1,7 @@
+[![Build status][build-image]][build-url]
+[![Tests coverage][cov-image]][cov-url]
+[![npm version][npm-image]][npm-url]
+
 # punycode2
 
 ## Modular version of [punycode](https://github.com/bestiejs/punycode.js) package
@@ -24,3 +28,10 @@ To port it to Browser or any other (non CJS) environment, use your favorite CJS 
 ## Tests [![Build Status](https://travis-ci.org/medikoo/punycode2.png)](https://travis-ci.org/medikoo/ppunycode2)
 
     $ npm test
+
+[build-image]: https://github.com/medikoo/punycode2/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/punycode2/actions?query=workflow%3AIntegrate
+[cov-image]: https://img.shields.io/codecov/c/github/medikoo/punycode2.svg
+[cov-url]: https://codecov.io/gh/medikoo/punycode2
+[npm-image]: https://img.shields.io/npm/v/punycode2.svg
+[npm-url]: https://www.npmjs.com/package/punycode2
