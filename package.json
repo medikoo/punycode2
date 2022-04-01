@@ -41,5 +41,8 @@
 		"prettier-check": "prettier -c --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
 		"prettify": "prettier --write --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
 		"test": "node test/index.js"
+	},
+	"engines": {
+		"node": ">=0.10"
 	}
 }
